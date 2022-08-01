@@ -1,0 +1,24 @@
+{% extends 'todobase.html' %}
+{% block title %} Home{% endblock title %} 
+{% block body %}
+    <p> </p>
+    <p> </p>
+    <p> </p> 
+
+    <p> </p>
+    <p> </p>
+    <p> </p>
+    <p> </p>
+    <h1 style="font-family:verdana;text-align:center;font-size:50px;">Your answer is correct!</h1>
+    {% if com.SrNo < yy %}
+    <a style = "color: green;
+        background-color: transparent;" href = "/com/{{com.SrNo + 1}}" type = "button" ><p style="font-family:verdana;text-align:center;font-size:50px;" >  <font face = "Comic sans MS" size =" 5">Next</font><br /></p></button>
+    {% endif %}
+    {% if com.SrNo == yy %}
+    <h2 style="text-align:center;font: size 60px;font-family: Verdana, Geneva, Tahoma, sans-serif ;color:#008CBA;"> Your score is {{ lll + 1 }} out of {{ com.SrNo }}</h2>
+    {% endif %}
+    {% if com.SrNo == yy %}
+    <h2 style = "text-align:center;font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;font-size:45px;" > Flashcards finished!</h2>
+    {% endif %}
+
+{% endblock body %}

@@ -1,0 +1,40 @@
+{% extends 'todobase.html' %}
+{% block title %} Home{% endblock title %} 
+{% block body %}
+<p>
+</p>
+<p>
+</p>
+<p></p>
+
+<h1 style="font-family:verdana;text-align:center;font-size:50px;">Periodic Table Flashcards</h1>
+<hr>
+<h1 style="font-family:verdana;text-align:center;font-size:35px;">Element: {{todo.question}}</h1>
+
+
+<form action="/{{ todo.SrNo }}" method = "POST" style="text-align:center;">
+    <label for="answer"><h1><span ><p style="font-family:verdana;text-align:center;font-size:35px;">Symbol:</p></span></h1></label>
+    <input style = " width: 30%;
+    padding: 10px 10px;
+    margin: 25px 0;
+    box-sizing: border-box;" type="text" id="answer" name="answer">
+    <br>
+    <p></p>
+    <input style = "background-color: #4CAF50; /* Green */
+    border: none;
+    color: white;
+    padding: 15px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin: 4px 2px;
+    cursor: pointer;background-color: #008CBA;" type="submit" value="Submit">
+    <h1>{{ count }}</h1>
+    {% if todo.SrNo < y %}
+        <a style = "color: green;
+        background-color: transparent;" href = "/{{todo.SrNo + 1}}" type = "button" ><p style="font-family:verdana;text-align:center;font-size:50px;" >  <font face = "Comic sans MS" size =" 5">Next</font><br /></p></button>
+    {% endif %}
+
+</form></div> 
+{% endblock body %}

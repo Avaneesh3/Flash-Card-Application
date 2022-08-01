@@ -1,0 +1,27 @@
+{% extends 'todobase.html' %}
+{% block title %} Home{% endblock title %} 
+{% block body %}
+
+    
+    <p> </p>
+    <p> </p>
+    <p> </p>
+    <p> </p> 
+
+    <p> </p>
+    <p> </p>
+    <p> </p>
+        <hr>
+                <h1 style="font-family:verdana;text-align:center;font-size:60px;">Your answer is Wrong!</h1>
+                <a href = "http://127.0.0.1:7000/{{ todo.SrNo }}"><p style="font-family:verdana;text-align:center;font-size:60px;">Click to try again!</p></a>
+                <h1 style="font-family:verdana;text-align:center;font-size:60px;color:#008CBA;">Answer:</h1>
+                <p><h1 style="font-family:verdana;text-align:center;font-size:60px;">The symbol for {{ todo.question }} is {{ todo.answer }}</h1></p>
+                {% if todo.SrNo == y %}
+                <h2 style="text-align:center;font: size 60px;font-family: Verdana, Geneva, Tahoma, sans-serif ;color:#008CBA;"> Your score is {{ ll }} out of {{ todo.SrNo }} </h2>
+                {% endif %}
+                {% if todo.SrNo == y %}
+                <p style="font-family:verdana;text-align:center;font-size:55px;"> Flashcards finished!</p>
+                {% endif %}
+
+
+{% endblock body %}   

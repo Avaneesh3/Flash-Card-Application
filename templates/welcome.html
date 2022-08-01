@@ -1,0 +1,37 @@
+{% extends 'todobase.html' %}
+{% block title %} Home{% endblock title %} 
+{% block body %}
+<p  style="font-family:verdana;text-align:center;font-size:75px;" >Welcome to Periodic Table flashcards!</p>
+    <a href = "http://127.0.0.1:7000/1"><p style="font-family:verdana;text-align:center;font-size:75px;">Click to start</p></a>
+
+<h2 style = "text-align: center;">Previous Scores</h2> 
+{% if all|length == 0 %}                
+<div class="alert alert-dark" role="alert">
+    Not attempted flashcards?Revise now! 
+  </div>
+    {% else %} 
+    <table class="table">
+        <thead>
+          <tr>
+            <th scope="col">SNo</th>
+            <th scope="col">Score</th>
+            <th scope="col">Username</th>
+            <th scope="col">Date</th>
+          </tr>
+        </thead>
+        
+        <tbody>
+{% for a in all %}
+<tr>
+<th scope="row">{{loop.index}}</th>
+<td>{{a.score}}</td>
+<td>{{a.name}}</td>
+<td>{{a.date_created}}</td>
+</tr>
+
+{% endfor %}
+</tbody>
+</table>
+{% endif %}
+    
+{% endblock body %}

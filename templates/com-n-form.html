@@ -1,0 +1,40 @@
+{% extends 'todobase.html' %}
+{% block title %} Home{% endblock title %} 
+{% block body %}
+<p>
+</p>
+<p>
+</p>
+<p></p>
+
+<h1 style="font-family:verdana;text-align:center;font-size:50px;">Compounds Flashcards</h1>
+<hr>
+<h1 style="font-family:verdana;text-align:center;font-size:35px;">Compound name: {{com.compound_name}}</h1>
+
+
+<form action="/com/{{ com.SrNo }}" method = "POST" style="text-align:center;">
+    <label for="compound_formula"><h1><span ><p style="font-family:verdana;text-align:center;font-size:35px;">Compound formula:</p></span></h1></label>
+    <input style = " width: 30%;
+    padding: 10px 10px;
+    margin: 25px 0;
+    box-sizing: border-box;" type="text" id="compound_formula" name="compound_formula">
+    <br>
+    <p></p>
+    <input style = "background-color: #4CAF50; /* Green */
+    border: none;
+    color: white;
+    padding: 15px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin: 4px 2px;
+    cursor: pointer;background-color: #008CBA;" type="submit" value="Submit">
+    <h1>{{ count }}</h1>
+    {% if com.SrNo < yy %}
+        <a style = "color: green;
+        background-color: transparent;" href = "/com/{{com.SrNo + 1}}" type = "button" ><p style="font-family:verdana;text-align:center;font-size:50px;" >  <font face = "Comic sans MS" size =" 5">Next</font><br /></p></button>
+    {% endif %}
+
+</form></div> 
+{% endblock body %}
